@@ -51,6 +51,7 @@
       </div>
     </ul>
   </aside>
+  <div class="sidebar-spacing"></div>
   <div class="content" role="main">
     <header>
       <div class="header-background"></div>
@@ -59,21 +60,23 @@
         <h1>Anais do Simpósio Latino Americano de Ciências de Alimentos</h1>
         <p>ISSN: 1234-5678</p>
       </div>
-      <div class="header-language">
-        <img src="../assets/internet-icon.svg" alt="Internet Icon">
-        <select id="language" name="language">
-          <option value="volvo">Pt-br</option>
-          <option value="saab">En-us</option>
-        </select>
-      </div>
-      <div class="header-account">
-        <div>
-          <p>Bem vindo!</p>
-          <p class="account-email">alguem12@galoascience.com</p>
+      <div class="header-options">
+        <div class="header-language">
+          <img src="../assets/internet-icon.svg" alt="Internet Icon">
+          <select id="language" name="language">
+            <option value="volvo">Pt-br</option>
+            <option value="saab">En-us</option>
+          </select>
         </div>
-        <div class="header-image-div">
-          <img src="../assets/profile.jpeg" alt="Minha Foto">
-          <span>2</span>
+        <div class="header-account">
+          <div>
+            <p>Bem vindo!</p>
+            <p class="account-email">alguem12@galoascience.com</p>
+          </div>
+          <div class="header-image-div">
+            <img src="../assets/profile.jpeg" alt="Minha Foto">
+            <span>2</span>
+          </div>
         </div>
       </div>
     </header>
@@ -124,11 +127,13 @@
       </div>
       <div class="content-card btn-show-more">
         <h3>Resumo</h3>
-        <p class="summary-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque, recusandae ex eos dolorem possimus deleniti quasi consequatur cumque, voluptatem obcaecati numquam modi voluptatibus exercitationem necessitatibus distinctio accusantium temporibus. Doloremque, impedit?Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis commodi eos corporis, laborum nihil molestias dicta sequi? Deleniti quisquam eaque harum commodi! Ex quidem sequi commodi, explicabo reprehenderit distinctio tenetur?Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae incidunt quis consequatur asperiores iure nemo voluptas adipisci sit quia architecto laboriosam eius consequuntur, obcaecati delectus nobis dolorum in quam molestiae!Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, odit! Veritatis quod aperiam qui nobis soluta necessitatibus voluptates ab eaque quibusdam error illo esse voluptate, veniam quis voluptas enim perferendis. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non quidem cupiditate veritatis suscipit impedit aut quam error culpa eum exercitationem, aliquam maiores molestiae consequuntur quae sapiente. Et earum dolores dolor. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque iure nihil laborum. Nihil non inventore nostrum ex cumque enim repellendus explicabo, voluptatum iste. Non provident excepturi dicta expedita fugit atque? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis possimus quas aliquam molestiae facere sunt fugiat! Quam voluptate nam illo quos illum nobis quibusdam! Magnam quaerat aut atque ut repudiandae?</p>
+        <div class="truncated summary-text" (click)="expandItem($event)">
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque, recusandae ex eos dolorem possimus deleniti quasi consequatur cumque, voluptatem obcaecati numquam modi voluptatibus exercitationem necessitatibus distinctio accusantium temporibus. Doloremque, impedit?Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis commodi eos corporis, laborum nihil molestias dicta sequi? Deleniti quisquam eaque harum commodi! Ex quidem sequi commodi,</p><p></p><p> explicabo reprehenderit distinctio tenetur?Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae incidunt quis consequatur asperiores iure nemo voluptas adipisci sit quia architecto laboriosam eius consequuntur, obcaecati delectus nobis dolorum in quam molestiae!Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, odit! Veritatis quod aperiam qui nobis soluta necessitatibus voluptates ab eaque quibusdam error illo esse voluptate, veniam quis voluptas enim perferendis. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non quidem cupiditate veritatis suscipit impedit aut quam error culpa eum exercitationem, aliquam maiores molestiae consequuntur quae sapiente. Et earum dolores dolor. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque iure nihil laborum. Nihil non inventore nostrum ex cumque enim repellendus explicabo, voluptatum iste. Non provident excepturi dicta expedita fugit atque? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis possimus quas aliquam molestiae facere sunt fugiat! Quam voluptate nam illo quos illum nobis quibusdam! Magnam quaerat aut atque ut repudiandae?</p>
+        </div>
       </div>
-      <div class="content-card">
+      <div class="content-card discussions">
         <h3>Discussões</h3>
-        <div class="create-topic-items">
+        <div class="create-topic-items" [ngStyle]="{ 'display': createTopicDisplay }">
           <h5>Compartilhe suas ideias ou dúvidas com os autores!</h5>
           <div class="create-topic-icons">
             <img src="../assets/seed-icon.png" alt="Seed Icon">
@@ -136,61 +141,143 @@
             <img src="../assets/ideas-icon.png" alt="Ideas Icon">
           </div>
           <p>Sabia que o maior estímulo do desenvolvimento científico e cultural é a curiosidade? Deixe seus questionamentos ou sugestões para o autor!</p>
-          <button class="btn-create-topic">
+          <button class="btn-create-topic" (click)="createTopic()">
             <span class="pi pi-plus"></span>
-            <span>Criar tópico</span>
+            <span>criar tópico</span>
           </button>
+          <div class="create-topic-dash"></div>
         </div>
-        <div class="answered-topic">
-          <h4 class="ops-topic-subject">Assunto da pergunta aparece aqui</h4>
-          <p class="question-author">Carlos Henrique Santos</p>
-          <p class="question-description">Comecinho da pergunta aparece aqui resente relato increve-se no campo da análise da dimensão e impacto de processo formativo situado no impacto de preocesso formativo processo...</p>
-          <div class="question-options">
-            <span class="pi pi-ellipsis-v"></span>
-            <span class="pi pi-heart-fill"></span>
-            <span>1 like</span>
-            <span>1 resposta</span>
+        <div class="topic-form-items" [ngStyle]="{ 'display': createTopicFormDisplay}">
+          <p class="topic-form-tittle">Tem uma dúvida ou sugestão? Compartilhe seu feedback com os autores!</p>
+          <div class="topic-form">
+            <form class="topic-form-input">
+              <div class="topic-form-input-div">
+                <label for="subject-input">Assunto</label>
+                <input type="text" class="subject" id="subject-input" placeholder="Defina um tópico sucinto para notificar os autores">
+              </div>
+              <div class="topic-form-input-div">
+                <label for="content-input">Conteúdo</label>
+                <textarea rows="4" cols="50" id="content-description"></textarea>
+              </div>
+            </form>
+            <div class="send-topic-div">
+              <button (click)="sendTopic()">Enviar</button>
+            </div>
           </div>
         </div>
-        <div class="answered-topic">
-          <h4 class="ops-topic-subject">Assunto da pergunta aparece aqui</h4>
-          <p class="question-author">Carlos Henrique Santos</p>
-          <p class="question-description">Comecinho da pergunta aparece aqui resente relato increve-se no campo da análise da dimensão e impacto de processo formativo situado no impacto de preocesso formativo processo...</p>
-          <div class="question-options">
-            <span class="pi pi-ellipsis-v"></span>
-            <span class="pi pi-heart-fill"></span>
-            <span>1 like</span>
-            <span>1 resposta</span>
+        <div class="sended-popup" [ngStyle]="{ 'display': sendedPopupDisplay }">
+          <div class="sended-message">
+            <h5>Seu tópico foi envidado com sucesso! :D</h5>
+            <p>Agradecemos por sua contribuição! Uma notificação será enviada ao seu email assim que seu tópico for respondido.</p>
+            <a href="#">Descubra outros trabalhos!</a>
+            <button (click)="createAnotherTopic()" >Criar novo tópico</button>
+            <div class="sended-create-topic-dash"></div>
+          </div>
+          <div class="popup-waiting-feedback">
+            <div class="answered-topic">
+              <div class="question-topic example-topic-div">
+                <div class="example-topic">
+                  <h4 class="ops-topic-subject">Assunto da pergunta aparece aqui</h4>
+                  <p class="question-author">Carlos Henrique Santos</p>
+                  <p class="question-description">Comecinho da pergunta aparece aqui resente relato increve-se no campo da análise da dimensão e impacto de processo formativo situado no impacto de preocesso formativo processo...</p>
+                  <div class="question-options">
+                    <span class="pi pi-ellipsis-v"></span>
+                    <span class="pi pi-heart-fill"></span>
+                    <span>1 like</span>
+                    <span>1 resposta</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="waiting-feedback">
+              <span class="pi pi-check"></span>
+              <p>Aguardando feedback dos autores</p>
+              <a href="#">Editar tópico</a>
+            </div>
+          </div>
+        </div>
+        <div class="answered-topic" (click)="expandAnswer($event)">
+          <div class="question-topic">
+            <h4 class="ops-topic-subject">Assunto da pergunta aparece aqui</h4>
+            <p class="question-author">Carlos Henrique Santos</p>
+            <p class="question-description">Comecinho da pergunta aparece aqui resente relato increve-se no campo da análise da dimensão e impacto de processo formativo situado no impacto de preocesso formativo processo...</p>
+            <div class="question-options">
+              <span class="pi pi-ellipsis-v"></span>
+              <span class="pi pi-heart-fill"></span>
+              <span>1 like</span>
+              <span>1 resposta</span>
+            </div>
+          </div>
+        </div>
+        <div class="truncated-comment" (click)="expandAnswer($event)">
+          <div class="answered-topic">
+            <div class="question-topic">
+              <h4 class="ops-topic-subject">Assunto da pergunta aparece aqui</h4>
+              <p class="question-author">Carlos Henrique Santos</p>
+              <p class="question-description">Comecinho da pergunta aparece aqui resente relato increve-se no campo da análise da dimensão e impacto de processo formativo situado no impacto de preocesso formativo processo...</p>
+              <div class="question-options">
+                <span class="pi pi-ellipsis-v"></span>
+                <span class="pi pi-heart-fill"></span>
+                <span>1 like</span>
+                <span>1 resposta</span>
+              </div>
+            </div>
+            <div class="answer-topic comments-container">
+              <div class="answer">
+                <div class="answer-tittle">
+                  <span class="answer-author">Adriano da Silva</span>
+                  <div class="answer-info">
+                    <span class="answer-role">Autor</span>
+                    <span class="pi pi-check"></span>
+                  </div>
+                </div>
+                <p class="answer-description">Resposta do autor é aqui. Relato inscreve-se no campo da análise da dimensão e impacto de processo formativo situado impacto de processo formativo processo resente relato inscreve-se no campo da análise da dimensão e impacto de processo formativo situado impacto de processo formativo processo.</p>
+              </div>
+              <div class="answer answer-by-author">
+                <div class="answer-tittle">
+                  <span class="answer-author">Carlos Henrique Santos</span>
+                  <div class="answer-info">
+                    <span class="answer-role">Autor</span>
+                    <span class="pi pi-check"></span>
+                  </div>
+                </div>
+                <p class="answer-description">Consegui entender melhor agora! Parece que a variação da análise da dimensão e impacto de processo formativo situado impacto de processo formativo. Obrigada pela resposta, muito interessante o seu trabalho!</p>
+              </div>
+              <div class="answer">
+                <div class="answer-tittle">
+                  <span class="answer-author">Camila Ferreira Andrade</span>
+                  <div class="answer-info">
+                    <span class="answer-role">Coautor</span>
+                    <span class="pi pi-check"></span>
+                  </div>
+                </div>
+                <p class="answer-description">Também interessante lembrar que o relato inscreve-se no campo da análise da dimensão e impacto de processo formativo situado impacto de processo formativo processo resente relato inscreve-se no campo da análise da dimensão e impacto de processo formativo situado impacto de processo formativo processo. Situado impacto de processo formativo processo resente relato inscreve-se no campo da análise da dimensão e impacto de processo formativo situado impacto de processo formativo processo.</p>
+              </div>
+              <div class="answer">
+                <div class="answer-tittle">
+                  <span class="answer-author">Ana Carolina</span>
+                  <div class="answer-info">
+                    <span class="answer-role">Coautor</span>
+                    <span class="pi pi-check"></span>
+                  </div>
+                </div>
+                <p class="answer-description">Resposta do autor é aqui. Relato inscreve-se no campo da análise da dimensão e impacto de processo formativo situado impacto de processo formativo processo resente relato inscreve-se no campo da análise da dimensão e impacto de processo formativo situado impacto de processo formativo processo.</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-
-
-
-      <h3>O elemento de expandir resumo precisa ter a classe .btn-show-more</h3>
-      <a href="#" class="btn-show-more">Ver mais</a>
-      
-      <h3>O elemento de criar tópico precisa ter a classe .btn-create-topic</h3>
-      <a href="#" class="btn-create-topic">Criar tópico</a>
-      
-      <h3>O card que contém um tópico respondido precisa ter a classe .answered-topic, o assunto do tópico deve ter a classe .ops-topic-subject</h3>
-      <div class="answered-topic">
-        <h4 class="ops-topic-subject">Título do tópico</h4>
-      </div>
-      <div class="comments-container">
-      Os comentários de um tópico devem estar encapsulados num elemento com a classe .comments-container
-    </div>
-    
-    <form>
-      Assunto:
-      <input class="subject" placeholder="Defina um tópico sucinto para notificar os autores...">
-      Conteúdo:
-      <!-- <input> -->
-      <button>Enviar</button>
-    </form>
-    
-    <h3>Após submeter o formulário, a seguinte mensagem deve ser exibida: Aguardando feedback dos autores</h3>
-    
+      <footer>
+        <div class="footer-image-div">
+          <img src="../assets/galoá-icon.png" alt="Galoá Image">
+          <button>Saiba mais</button>
+        </div>
+        <div class="footer-text-div">
+          <p><span>Preservar a memória do evento e ampliar o acesso ao conhecimento científico</span> gerado em eventos é a razão de ser da plataforma Galoá Proceedings.
+          </p>
+          <p>Os trabalhos publicados aqui tem maior alcance e ficam disponíveis para toda a comunidade científica, mantendo acesso o debate científico fomentado pelos encontros e aumentando o impacto do evento.</p>
+        </div>
+      </footer>
   </main>
   </div>
 </div>
