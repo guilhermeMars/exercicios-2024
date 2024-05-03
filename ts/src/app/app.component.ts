@@ -6,7 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'DevChuva';
+  textDisplay: string = 'none';
+  verMaisDisplay: string = 'inline'
+  verMenosDisplay: string = 'none';
   createTopicDisplay: string = 'flex';
   createTopicFormDisplay: string = 'none';
   sendedPopupDisplay: string = 'none';
@@ -49,6 +51,18 @@ export class AppComponent {
     this.createTopicDisplay = 'none';
     this.createTopicFormDisplay = 'flex';
     this.sendedPopupDisplay = 'none';
+  }
+
+  expandText(): void{
+    this.textDisplay = "inline";
+    this.verMaisDisplay = "none";
+    this.verMenosDisplay = "inline";
+  }
+
+  closeText(): void{
+    this.textDisplay = "none";
+    this.verMenosDisplay = "none";
+    this.verMaisDisplay = "inline";
   }
 
   expandItem(event: MouseEvent): void {

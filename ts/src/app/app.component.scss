@@ -86,9 +86,11 @@
     min-width: 17rem;
     height: 100vh;
 }
+
 // ==================
 // Conteúdo
 // ==================
+
 .content{
     // margin-left: 10px;
     display: flex;
@@ -97,6 +99,10 @@
     justify-content: center;
     margin: auto;
 }
+
+// ==================
+// Cabeçalho
+// ==================
 
 header{
     display: flex;
@@ -187,10 +193,18 @@ header{
     display: inline-block;
 }
 
+// ==================
+// Principal
+// ==================
+
 main{
     // margin-left: 2.4rem;
     max-width: 80vw;
 }
+
+// ==================
+// Título do vídeo
+// ==================
 
 .video-tittle{
     display: flex;
@@ -218,7 +232,7 @@ main{
     gap: 0.3rem;
 }
 
-.video-tittle-buttons button{
+.video-tittle-buttons a{
     background-color: #ec7d3d;
     color: white;
     font-size: large;
@@ -227,6 +241,7 @@ main{
     border-radius: 3px;
     display: flex;
     gap: 0.4rem;
+    text-decoration: none;
 }
 
 .video-tittle-buttons img{
@@ -240,6 +255,10 @@ main{
     text-decoration: none;
     color: #ec7d3d;
 }
+
+// ==================
+// Vídeo e Descrição
+// ==================
 
 .video-div{
     display: flex;
@@ -307,6 +326,10 @@ main{
     color: rgba(152, 152, 152, 0.8);
 }
 
+// ==================
+// Cofig. Padrão dos blocos
+// ==================
+
 .content-card{
     box-shadow: rgba(0, 0, 0, 0.0) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
     margin: 2.1rem 0;
@@ -325,14 +348,29 @@ main{
     font-size: 18px;
 }
 
+// ==================
+// Sessão de Discussões
+// ==================
+
 .discussions{
     margin-bottom: 5rem;
 }
 
 .summary-text{
     padding: 9px 13px;
+}
+
+.summary-text a{
+    display: inline;
+    text-decoration: none;
+    font-size: 20px;
+    color: #ec7d3d;
     cursor: pointer;
 }
+
+// ==================
+// 1a página: Compartilhe suas Ideias!
+// ==================
 
 .create-topic-items{
     display: flex;
@@ -365,7 +403,7 @@ main{
     max-width: 55rem;
 }
 
-.create-topic-items button{
+.create-topic-items a{
     background-image: linear-gradient(#e5c281, #f3670c);
     border: none;
     color: white;
@@ -373,6 +411,7 @@ main{
     padding: 8px 30px;
     border-radius: 4px;
     display: flex;
+    align-items: center;
     gap: 0.3rem;
     cursor: pointer;
     margin: 7px 0;
@@ -387,6 +426,10 @@ main{
     border-radius: 2px;
     background-color: #dadada;
 }
+
+// ==================
+// 2a página: Formulário
+// ==================
 
 .topic-form-items{
     display: flex;
@@ -446,6 +489,14 @@ main{
     height: 10rem;
 }
 
+.topic-form-input-div input::placeholder{
+    color: #a3a3a3;
+}
+
+// ==================
+// 3a página: Tópico Enviado
+// ==================
+
 .send-topic-div{
     display: flex;
     justify-content: right;
@@ -493,10 +544,11 @@ main{
     margin-bottom: 3rem;
 }
 
-.sended-message button{
+.create-new-topic{
     background-image: linear-gradient(#fdaf53, #f2843f);
     border: none;
-    color: white;
+    color: white !important;
+    text-decoration: none;
     font-size: 18px;
     padding: 8px 0;
     width: 18rem;
@@ -546,18 +598,16 @@ main{
     font-weight: bold;
 }
 
-.topic-form-input-div input::placeholder{
-    color: #a3a3a3;
-}
-
-.answered-topic{
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    border-radius: 6px;
-    margin: 1.2rem 1rem;
-}
+// ==================
+// Tópicos
+// ==================
 
 .question-topic{
     padding: 15px 20px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 6px;
+    margin: 1.2rem 1rem;
 }
 
 .ops-topic-subject{
@@ -595,6 +645,14 @@ main{
     font-size: 13px;
     padding: 4px 8px;
     border-radius: 2px;
+}
+
+// ==================
+// Respostas de tópicos
+// ==================
+
+.answer-topic{
+    margin-top: 1rem;
 }
 
 .answer{
@@ -645,6 +703,10 @@ main{
     font-size: 22px !important;
 }
 
+// ==================
+// Rodapé
+// ==================
+
 footer{
     box-shadow: rgba(0, 0, 0, 0.1) 0px -2px 0px;
     width: fit-content;
@@ -663,10 +725,11 @@ footer{
     width: 18rem;
 }
 
-.footer-image-div button{
+.footer-image-div a{
     background-color: #74448c;
     color: white;
-    border: none;
+    text-decoration: none;
+    text-align: center;
     padding: 10px 0;
     border-radius: 5px;
     font-size: 16px;
@@ -689,16 +752,6 @@ footer{
 // ==================
 // Display Text
 // ==================
-.truncated > * {
-    display: none;
-}
-.truncated > p:first-child {
-    display: block;
-}
-.truncated > p:first-child::after {
-    content: "\00a0 More…";
-    text-decoration: underline;
-}
 
 .truncated-comment{
     cursor: pointer;
